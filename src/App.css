@@ -154,7 +154,6 @@ code {
 
 .bubble {
   background-color: white;
-  background-image: url('C:/Users/Gavin/Downloads/Projects/personal-website/src/app/ESL.jpg');
   background-size: 40px 40px;
   border-radius: 50%;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1);
@@ -183,7 +182,10 @@ code {
 }
 
 .item-name {
-  color: rgba(255, 255, 255, 0.726);
+  font-family: EuclidCircular;
+  letter-spacing: -2px;
+  color: rgba(255,255,255,0.96);
+  text-shadow: 0 0 80px rgba(192,219,255,0.48), 0 0 32px rgba(65,120,255,0.24);
   margin-right: 0.5vw;
   font-weight: bold;
 }
