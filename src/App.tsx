@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {FaGithub, FaLinkedin, FaStackOverflow, FaEnvelope, FaFilePdf, FaCode, FaFileVideo} from 'react-icons/fa';
 
 // Techonlogy
 import react from './app/React.png';
@@ -38,30 +39,17 @@ let technology = [
 ]
 
 function App() {
-  const [date, setDate] = useState(new Date().toLocaleTimeString())
-  
-  /*
-  useEffect(() => {
-    var timerID = setInterval(() => tick(), 1000);
-    return function cleanup() {
-        clearInterval(timerID);
-      };
-   });
-  
-  function tick() {
-    setDate(new Date().toLocaleTimeString());
-  }
-  */
   const hours = new Date().getHours()
-  //const isDayTime = hours > 6 && hours < 18
-  const isDayTime = false;
-
+  const isMorning = hours > 5 && hours < 12
+  const isEvening = hours < 5 && hours > 19;
+  const isAfternoon = hours > 12 && hours < 19;
   return (
-    <div className={isDayTime ? 'day app' : 'night app'}>
+    <div className={'night app'}>
       <div className="app-stars"></div>
       <div className="app-nova"></div>
-      <Header date={date}/>
+      <Header afternoon={isAfternoon} morning={isMorning} evening={isEvening}/>
       <MainContainer/>
+      <Footer/>
     </div>
   );
 }
@@ -69,7 +57,31 @@ function App() {
 function Header(props:any){
   return (
     <div className="header">
-      {props.date}
+      <div className="item-name">Gavin Gosling's Website</div>
+    </div>
+  )
+}
+
+function Footer(){
+  return (
+    <div className="footer">
+        <nav className="icon-container">
+            <a className="icon" aria-label="Linkedin" href="https://www.linkedin.com/in/gavin-gosling-cs/" target="_blank" data-hint="LinkedIn" rel="noreferrer">
+              <FaLinkedin size={40}/>
+            </a>
+            <a className="icon" aria-label="Github" href="https://github.com/Grandient" target="_blank" data-hint="Github" rel="noreferrer">
+              <FaGithub size={40}/>
+            </a>
+            <a className="icon" aria-label="E-mail" href="mailto:gavin.gosling1@gmail.com" target="_blank" data-hint="E-mail" rel="noreferrer">
+              <FaEnvelope size={40}/>
+            </a>
+            <a className="icon" aria-label="Stack Overflow" href="https://stackoverflow.com/users/12733306/" target="_blank" data-hint="Stack Overflow" rel="noreferrer">
+              <FaStackOverflow size={40}/>
+            </a>
+            <a className="icon" aria-label="CV" href="./data/Gavin_Gosling_Resume.pdf" data-hint="PDF" rel="noreferrer">
+              <FaFilePdf size={40}/>
+            </a>
+          </nav>
     </div>
   )
 }
@@ -101,7 +113,7 @@ function ContainerOption(props: any){
     <div>
       <div className="sub-options">
         {props.options.map((option: {name: string, path: string}) => {
-          return <div onClick={() => setClick(option.name)} className="subcontainer-option"><img src={option.path} className="subcontainer-image"/></div>
+          return <div onClick={() => setClick(option.name)} className={click === option.name ? "subcontainer-option selected" : "subcontainer-option"}><img src={option.path} className={click === option.name ? "subcontainer-image selected" : "subcontainer-image"}/></div>
         })}
       </div>
       <div className="item-container">
