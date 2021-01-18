@@ -158,6 +158,8 @@ code {
   margin-right: 0.5vw;
   margin-bottom: 0vw;
   transition: 0.35s;
+  user-select: none;
+  cursor: pointer;
 }
 
 .subcontainer-option.selected {
@@ -199,6 +201,8 @@ code {
   border-radius: 2px;
   margin: 1vw;
   transition: 0.35s;
+  user-select: none;
+  cursor: pointer;
 }
 
 .container-option.selected {
