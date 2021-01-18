@@ -39,17 +39,35 @@ let technology = [
 ]
 
 function App() {
-  const hours = new Date().getHours()
-  const isMorning = hours > 5 && hours < 12
-  const isEvening = hours < 5 && hours > 19;
-  const isAfternoon = hours > 12 && hours < 19;
+  /*
+  const [opacity, setOpacity] = useState(50);
+  useEffect(() => {
+    var timerID = setInterval(() => fadeBackground(), 1000);
+    return function cleanup() {
+        clearInterval(timerID);
+      };
+   });
+
+  function fadeBackground(){
+    setOpacity();
+  }*/
+
   return (
-    <div className={'night app'}>
-      <div className="app-stars"></div>
-      <div className="app-nova"></div>
-      <Header afternoon={isAfternoon} morning={isMorning} evening={isEvening}/>
-      <MainContainer/>
-      <Footer/>
+    <div>
+      <div>
+        <div className="overflow">
+          <div className="app-stars"></div>
+        </div>
+        <div className="overflow">
+          <div className="app-nova"></div>
+        </div>
+      </div>
+      <div className='night app'>
+        <Header/>
+        <MainContainer/>
+        <div></div>
+        <Footer/>
+      </div>
     </div>
   );
 }

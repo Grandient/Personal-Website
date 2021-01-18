@@ -4,6 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -1px;
+  overflow: hidden;
 }
 
 code {
@@ -21,32 +22,64 @@ code {
   justify-content: space-between;
   z-index: 2;
 }
-
+.overflow {
+  overflow: hidden;
+}
 .app-stars {
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   content: close-quote;
   opacity: 1;
   z-index: 1;
   position: absolute;
   background-image: url('https://thegraph.com/explorer/images/stars.png');
   pointer-events: none;
+  animation: opacitychange2 10s infinite, rotate2 30s infinite;
+  animation-timing-function: linear;
 }
 
 .app-nova {
   background-color: initial;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -150%;
+  left: -150%;
+  width: 300vw;
+  height: 300vh;
+  border-radius: 50%;
   position: absolute;
   z-index: 1;
   opacity: 0.5;
   background-image: url('https://thegraph.com/explorer/images/nova.png');
   background-size: 100% auto;
   pointer-events: none;
+  animation: opacitychange1 10s infinite, rotate1 30s infinite;
+  animation-timing-function: linear;
+  transform: scaleY(2), scaleX(2);
+}
+
+@keyframes opacitychange1 {
+  0% {opacity: 0.25;  transform: rotate(0deg);}
+  50% {opacity: 1; transform: rotate(180deg);}
+  100% {opacity: 0.25; transform: rotate(0deg);}
+}
+
+@keyframes opacitychange2 {
+  0% {opacity: 1; transform: rotate(360deg);}
+  50% {opacity: 0.25; transform: rotate(180deg);}
+  100% {opacity: 1; transform: rotate(0deg);}
+}
+
+@keyframes rotate1 {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes rotate2 {
+  0% {transform: rotate(360deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(0deg);}
 }
 
 .project {
