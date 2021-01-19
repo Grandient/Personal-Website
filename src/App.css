@@ -3,7 +3,6 @@ body {
   font-family: EuclidCircular, arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -1px;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
 }
@@ -118,12 +117,14 @@ code {
 }
 
 .header {
-  margin-bottom: 10vh;
+  margin-bottom: 4vh;
   font-size: 2.5vh; 
-  border: 1px solid rgb(209, 73, 157);
   background-color:rgba(19, 18, 18, 0.795);
-  border-radius: 2px;
+  border-radius: 10px;
+  border: 1px solid rgba(209, 73, 157, 0.692);
+  box-shadow: rgba(151, 41, 112, 0.4) 0.375rem 0.375rem 1.5rem, rgba(151, 41, 112, 0.05) -0.375rem -0.375rem 1.5rem;
   padding: 0.5vw;
+  margin-top: 2vh;
 }
 
 .night {
@@ -254,7 +255,7 @@ code {
   text-align: left;
   flex-direction: column;
   align-items: left;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(min(2vh,1vw));
   border: 1px solid rgb(209, 73, 157);
   background-color:rgba(44, 42, 42, 0.329);
@@ -266,7 +267,6 @@ code {
 
 .item-name {
   font-family: EuclidCircular;
-  letter-spacing: -2px;
   color: rgba(255,255,255,0.96);
   text-shadow: 0 0 80px rgba(192,219,255,0.48), 0 0 32px rgba(65,120,255,0.24);
   margin-right: 0.5vw;
@@ -276,6 +276,7 @@ code {
 .flex-row {
   display: flex;
   flex-direction: row;
+  margin-top: 3vh;
 }
 
 .footer {
@@ -285,6 +286,7 @@ code {
   border: 1px solid rgba(209, 73, 157, 0.692);
   box-shadow: rgba(151, 41, 112, 0.4) 0.375rem 0.375rem 1.5rem, rgba(151, 41, 112, 0.05) -0.375rem -0.375rem 1.5rem;
   width: 20vw;
+  margin-bottom: 2vh;
 }
 
 .icon {

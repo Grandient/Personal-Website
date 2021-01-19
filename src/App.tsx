@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {FaGithub, FaLinkedin, FaStackOverflow, FaEnvelope, FaFilePdf, FaCode, FaFileVideo} from 'react-icons/fa';
+import {FaGithub, FaLinkedin, FaStackOverflow, FaEnvelope, FaFilePdf, FaFileVideo} from 'react-icons/fa';
+import {IoIosBrowsers} from 'react-icons/io';
+import {GrDeploy} from  "react-icons/gr";
 
 // Techonlogy
 import react from './app/React.png';
@@ -23,12 +25,18 @@ let projects = [
   { name: "PassChecker", 
     path: passchecker, 
     description: "A react application made for checking password strength and validity based on Dropbox's zxcvbn.",
-    link: "http://gavingosling.me/PassChecker/"
+    deployment: "http://gavingosling.me/PassChecker/",
+    link: "https://github.com/Grandient/PassChecker",
+    type: "Project",
+    video: "http://gavingosling.me/data/PassChecker.webm"
   },
   { name: "RepositoryViewr", 
     path: repositoryviewr,
     description: "A react application that will gives an overview of any repository. An interactive table and chart views to help users understand what happens on each commit.",
-    link: "http://gavingosling.me/RepositoryViewr/"
+    deployment: "http://gavingosling.me/RepositoryViewr/",
+    link: "https://github.com/Grandient/RepositoryViewr",
+    type: "Project",
+    video: "http://gavingosling.me/data/repoviewer.webm"
   },
 ]
 
@@ -36,17 +44,20 @@ let experience = [
   { name: "ESL", 
     path: ESL,
     description: "ESL, formerly known as Electronic Sports League, is an esports organizer and production company that produces video game competitions worldwide. ESL is the world's largest esports company, and the oldest that is still operational.",
-    link: "https://www.eslgaming.com/"
+    link: "https://www.eslgaming.com/",
+    type: "Experience"
   },
   {name: "Ontario Tech University", 
    path: ontariotech,
    description: "The University of Ontario Institute of Technology, corporately branded as Ontario Tech University or Ontario Tech, is a public research university located in Oshawa, Ontario, Canada.",
-   link: "https://ontariotechu.ca/"
+   link: "https://ontariotechu.ca/",
+   type: "Experience"
   },
   {name: "FliteX", 
    path: flitex,
    description: "An aviation startup that provides 4d Trajectory optimizations and finanical services for airlines.",
-   link: "https://flitex.net/"
+   link: "https://flitex.net/",
+   type: "Experience"
   }
 ]
 
@@ -54,44 +65,36 @@ let technology = [
   {name: "React", 
    path: react,
    description: "React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications.",
-   link: "https://reactjs.org/"
+   link: "https://reactjs.org/",
+   type: "Tech"
   },
   {name: "MongoDB", 
    path: mongodb,
    description: "MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. ",
-   link: "https://www.mongodb.com/"
+   link: "https://www.mongodb.com/",
+   type: "Tech"
   },
   {name: "Prometheus", 
    path: prometheus,
    description: "An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.",
-   link: "https://prometheus.io/"
+   link: "https://prometheus.io/",
+   type: "Tech"
   },
   {name: "Grafana", 
    path: grafana,
    description: "Grafana is a multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources.",
-   link: "https://grafana.com/grafana/"
+   link: "https://grafana.com/grafana/",
+   type: "Tech"
   },
   {name: "Redux", 
    path: redux,
    description: "A predictable state container for JavaScript apps.",
-   link: "https://redux.js.org/"
+   link: "https://redux.js.org/",
+   type: "Tech"
   }
 ]
 
 function App() {
-  /*
-  const [opacity, setOpacity] = useState(50);
-  useEffect(() => {
-    var timerID = setInterval(() => fadeBackground(), 1000);
-    return function cleanup() {
-        clearInterval(timerID);
-      };
-   });
-
-  function fadeBackground(){
-    setOpacity();
-  }*/
-
   return (
     <div>
       <div>
@@ -115,7 +118,7 @@ function App() {
 function Header(props:any){
   return (
     <div className="header">
-      <div className="item-name">Gavin Gosling's Website</div>
+      <div className="item-name">Gavin Gosling</div>
     </div>
   )
 }
@@ -136,7 +139,7 @@ function Footer(){
             <a className="icon" aria-label="Stack Overflow" href="https://stackoverflow.com/users/12733306/" target="_blank" data-hint="Stack Overflow" rel="noreferrer">
               <FaStackOverflow size={40}/>
             </a>
-            <a className="icon" aria-label="CV" href="./data/Gavin_Gosling_Resume.pdf" data-hint="PDF" rel="noreferrer">
+            <a className="icon" aria-label="CV" href="http://gavingosling.me/data/Gavin_Gosling_Resume.pdf" data-hint="PDF" rel="noreferrer">
               <FaFilePdf size={40}/>
             </a>
           </nav>
@@ -187,12 +190,45 @@ function ItemContainer(props: any){
   return (
   <div>
     <div className="flex-row">
-      <div className="item-name">Name: </div>
+      <div className="item-name">Title: </div>
       <div>{props.item.name}</div>
     </div>
     <div className="flex-row">
       <div className="item-name">Description: </div>
       <div>{props.item.description}</div>
+    </div>
+    <div>
+      <div className="item-name">Material: </div>
+      {props.item.type === "Project" ?
+          <a className="icon" aria-label="Github" href={props.item.link} target="_blank" data-hint="Github" rel="noreferrer">
+          <FaGithub size={40}/> Github
+      </a>
+      : null
+      }
+      {props.item.type === "Experience" ?
+          <a className="icon" aria-label="Employer Link" href={props.item.link} target="_blank" data-hint="Github" rel="noreferrer">
+          <IoIosBrowsers size={40}/> Employer Link
+      </a>
+      : null
+      }
+      {props.item.type === "Tech" ?
+          <a className="icon" aria-label="Tech Link" href={props.item.link} target="_blank" data-hint="Github" rel="noreferrer">
+          <IoIosBrowsers size={40}/> Tech Link
+      </a>
+      : null
+      }
+      {props.item.type === "Project" ?
+          <a className="icon" aria-label="Tech Link" href={props.item.deployment} target="_blank" data-hint="Github" rel="noreferrer">
+          <GrDeploy size={40}/> Deployment
+      </a>
+      : null
+      }
+        {props.item.type === "Project" ?
+          <a className="icon" aria-label="Tech Link" href={props.item.video} target="_blank" data-hint="Github" rel="noreferrer">
+          <FaFileVideo size={40}/> video
+      </a>
+      : null
+      }
     </div>
   </div>
   )
