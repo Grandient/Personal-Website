@@ -225,7 +225,7 @@ function ItemContainer(props: any){
       }
         {props.item.type === "Project" ?
           <a className="icon" aria-label="Tech Link" href={props.item.video} target="_blank" data-hint="Github" rel="noreferrer">
-          <FaFileVideo size={40}/> video
+          <FaFileVideo size={40}/> Video
       </a>
       : null
       }
