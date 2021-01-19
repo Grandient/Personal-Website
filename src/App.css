@@ -266,17 +266,39 @@ code {
 }
 
 .item-name {
-  font-family: EuclidCircular;
   color: rgba(255,255,255,0.96);
   text-shadow: 0 0 80px rgba(192,219,255,0.48), 0 0 32px rgba(65,120,255,0.24);
   margin-right: 0.5vw;
   font-weight: bold;
 }
 
+.tech-name {
+  color: rgba(255,255,255,0.96);
+  text-shadow: 0 0 80px rgba(192,219,255,0.48), 0 0 32px rgba(65,120,255,0.24);
+  margin-right: 0.5vw;
+  font-weight: bold;
+  margin-top: 2vh; 
+}
+
+.tech-img {
+  background-size: 60px 60px;
+  border-radius: 50%;
+  width: 60px;
+  height: 50px;
+  margin-right: 1vw;
+  margin-top: 0.5vh;
+}
+
+.tech-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
-  margin-top: 3vh;
+  margin-top: 0.5vh;
 }
 
 .footer {

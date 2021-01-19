@@ -9,6 +9,8 @@ import mongodb from './app/Mongodb.png';
 import prometheus from './app/Prometheus.png';
 import grafana from './app/Grafana.jpg';
 import redux from './app/Redux.svg';
+import postgres from './app/postgres.svg';
+import airflow from './app/airflow.png';
 
 // Experience 
 import ontariotech from './app/OntarioTech.png';
@@ -18,6 +20,7 @@ import flitex from './app/Flitex.png';
 // Projects
 import passchecker from './app/Passcheckerlogo.png'
 import repositoryviewr from './app/repositoryviewrlogo.png'
+import badlion from './app/badlion-logo.png'
 
 import './App.css';
 
@@ -28,7 +31,8 @@ let projects = [
     deployment: "http://gavingosling.me/PassChecker/",
     link: "https://github.com/Grandient/PassChecker",
     type: "Project",
-    video: "http://gavingosling.me/data/PassChecker.webm"
+    video: "http://gavingosling.me/data/PassChecker.webm",
+    technologies: [{image:react, link: "https://reactjs.org/"}]
   },
   { name: "RepositoryViewr", 
     path: repositoryviewr,
@@ -36,28 +40,42 @@ let projects = [
     deployment: "http://gavingosling.me/RepositoryViewr/",
     link: "https://github.com/Grandient/RepositoryViewr",
     type: "Project",
-    video: "http://gavingosling.me/data/repoviewer.webm"
+    video: "http://gavingosling.me/data/repoviewer.webm",
+    technologies: [{image: react, link: "https://reactjs.org/"}]
   },
+  { name: "Badlion.net",
+    path: badlion,
+    description: "The Badlion Client is the largest community driven Minecraft client that provides better FPS, Optifine support, over 50+ mods, client anticheat, and is free!",
+    deployment: "https://badlion.net",
+    link: "private",
+    type: "Project",
+    video: "none",
+    technologies: [{image: react, link: "https://reactjs.org/"}, {image: redux, link: "https://redux.js.org/"}]
+  }
 ]
 
 let experience = [
   { name: "ESL", 
     path: ESL,
-    description: "ESL, formerly known as Electronic Sports League, is an esports organizer and production company that produces video game competitions worldwide. ESL is the world's largest esports company, and the oldest that is still operational.",
+    description: "ESL is an esports organizer and production company that produces video game competitions worldwide. ESL is the world's largest esports company, and the oldest that is still operational.",
     link: "https://www.eslgaming.com/",
-    type: "Experience"
+    type: "Experience",
+    technologies: [{image:react, link: "https://reactjs.org/"}]
   },
   {name: "Ontario Tech University", 
    path: ontariotech,
    description: "The University of Ontario Institute of Technology, corporately branded as Ontario Tech University or Ontario Tech, is a public research university located in Oshawa, Ontario, Canada.",
    link: "https://ontariotechu.ca/",
-   type: "Experience"
+   type: "Experience",
+   technologies: [{image: react, link: "https://reactjs.org/"}, {image: mongodb, link: "https://www.mongodb.com/"},{image: postgres, link: "https://www.postgresql.org/"} ]
   },
   {name: "FliteX", 
    path: flitex,
    description: "An aviation startup that provides 4d Trajectory optimizations and finanical services for airlines.",
    link: "https://flitex.net/",
-   type: "Experience"
+   type: "Experience",
+   technologies: [{image:react, link: "https://reactjs.org/"}, {image: mongodb, link: "https://www.mongodb.com/"}, {image: grafana, link: "https://grafana.com/grafana/"}, 
+   {image: prometheus, link: "https://prometheus.io/"}, {image: postgres, link: "https://www.postgresql.org/"}, {image: airflow, link:"https://airflow.apache.org/"}]
   }
 ]
 
@@ -90,6 +108,18 @@ let technology = [
    path: redux,
    description: "A predictable state container for JavaScript apps.",
    link: "https://redux.js.org/",
+   type: "Tech"
+  },
+  {name: "Postgres", 
+   path: postgres,
+   description: "PostgreSQL is a free and open-source relational database management system emphasizing extensibility and SQL compliance.",
+   link: "https://www.postgresql.org/",
+   type: "Tech"
+  },
+  {name: "Airflow",
+   path: airflow,
+   description: "",
+   link: "https://airflow.apache.org/",
    type: "Tech"
   }
 ]
@@ -199,7 +229,7 @@ function ItemContainer(props: any){
     </div>
     <div>
       <div className="item-name">Material: </div>
-      {props.item.type === "Project" ?
+      {props.item.type === "Project" && props.item.link && props.item.link != "private" ?
           <a className="icon" aria-label="Github" href={props.item.link} target="_blank" data-hint="Github" rel="noreferrer">
           <FaGithub size={40}/> Github
       </a>
@@ -223,12 +253,23 @@ function ItemContainer(props: any){
       </a>
       : null
       }
-        {props.item.type === "Project" ?
+      {props.item.type === "Project" && props.item.video && props.item.video != "none" ?
           <a className="icon" aria-label="Tech Link" href={props.item.video} target="_blank" data-hint="Github" rel="noreferrer">
           <FaFileVideo size={40}/> Video
       </a>
       : null
       }
+        {(props.item.type === "Project" || props.item.type === "Experience") ? <div className="tech-name">Technologies: </div> : null}
+        {(props.item.type === "Project" || props.item.type === "Experience") && (props.item.technologies != []) ?
+          <div className="tech-row">
+          {props.item.technologies.map((tech:any) => {
+            return <a aria-label="Tech Link" href={tech.link} target="_blank" data-hint="Github" rel="noreferrer">
+              <img src={tech.image} className="tech-img"/>
+            </a>
+          })}
+          </div>
+        : null
+        }
     </div>
   </div>
   )
