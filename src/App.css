@@ -281,6 +281,7 @@ code {
 }
 
 .tech-img {
+  object-fit: cover;
   background-size: 60px 60px;
   border-radius: 50%;
   width: 60px;

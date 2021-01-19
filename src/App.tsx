@@ -11,6 +11,7 @@ import grafana from './app/Grafana.jpg';
 import redux from './app/Redux.svg';
 import postgres from './app/postgres.svg';
 import airflow from './app/airflow.png';
+import grpc from './app/grpc.png';
 
 // Experience 
 import ontariotech from './app/OntarioTech.png';
@@ -60,7 +61,7 @@ let experience = [
     description: "ESL is an esports organizer and production company that produces video game competitions worldwide. ESL is the world's largest esports company, and the oldest that is still operational.",
     link: "https://www.eslgaming.com/",
     type: "Experience",
-    technologies: [{image:react, link: "https://reactjs.org/"}]
+    technologies: [{image:react, link: "https://reactjs.org/"}, {image: redux, link: "https://redux.js.org/"}]
   },
   {name: "Ontario Tech University", 
    path: ontariotech,
@@ -118,9 +119,15 @@ let technology = [
   },
   {name: "Airflow",
    path: airflow,
-   description: "",
+   description: "Platform created by the community to programmatically author, schedule and monitor workflows.",
    link: "https://airflow.apache.org/",
    type: "Tech"
+  },
+  {name: "gRPC",
+   path: grpc,
+   description: "gRPC is an open source remote procedure call system initially developed at Google in 2015.",
+   link: "https://grpc.io/",
+   tech: "Tech"
   }
 ]
 
