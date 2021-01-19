@@ -20,22 +20,62 @@ import repositoryviewr from './app/repositoryviewrlogo.png'
 import './App.css';
 
 let projects = [
-  {name: "PassChecker", path: passchecker},
-  {name: "RepositoryViewr", path: repositoryviewr},
+  { name: "PassChecker", 
+    path: passchecker, 
+    description: "A react application made for checking password strength and validity based on Dropbox's zxcvbn.",
+    link: "http://gavingosling.me/PassChecker/"
+  },
+  { name: "RepositoryViewr", 
+    path: repositoryviewr,
+    description: "A react application that will gives an overview of any repository. An interactive table and chart views to help users understand what happens on each commit.",
+    link: "http://gavingosling.me/RepositoryViewr/"
+  },
 ]
 
 let experience = [
-  {name: "ESL", path: ESL},
-  {name: "Ontario Tech", path:ontariotech},
-  {name: "FliteX", path: flitex}
+  { name: "ESL", 
+    path: ESL,
+    description: "ESL, formerly known as Electronic Sports League, is an esports organizer and production company that produces video game competitions worldwide. ESL is the world's largest esports company, and the oldest that is still operational.",
+    link: "https://www.eslgaming.com/"
+  },
+  {name: "Ontario Tech University", 
+   path: ontariotech,
+   description: "The University of Ontario Institute of Technology, corporately branded as Ontario Tech University or Ontario Tech, is a public research university located in Oshawa, Ontario, Canada.",
+   link: "https://ontariotechu.ca/"
+  },
+  {name: "FliteX", 
+   path: flitex,
+   description: "An aviation startup that provides 4d Trajectory optimizations and finanical services for airlines.",
+   link: "https://flitex.net/"
+  }
 ]
 
 let technology = [
-  {name: "React", path: react},
-  {name: "MongoDB", path: mongodb},
-  {name: "Prometheus", path: prometheus},
-  {name: "Grafana", path:grafana},
-  {name: "Redux", path:redux}
+  {name: "React", 
+   path: react,
+   description: "React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications.",
+   link: "https://reactjs.org/"
+  },
+  {name: "MongoDB", 
+   path: mongodb,
+   description: "MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. ",
+   link: "https://www.mongodb.com/"
+  },
+  {name: "Prometheus", 
+   path: prometheus,
+   description: "An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.",
+   link: "https://prometheus.io/"
+  },
+  {name: "Grafana", 
+   path: grafana,
+   description: "Grafana is a multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources.",
+   link: "https://grafana.com/grafana/"
+  },
+  {name: "Redux", 
+   path: redux,
+   description: "A predictable state container for JavaScript apps.",
+   link: "https://redux.js.org/"
+  }
 ]
 
 function App() {
@@ -152,7 +192,7 @@ function ItemContainer(props: any){
     </div>
     <div className="flex-row">
       <div className="item-name">Description: </div>
-      <div>{props.item.name}</div>
+      <div>{props.item.description}</div>
     </div>
   </div>
   )

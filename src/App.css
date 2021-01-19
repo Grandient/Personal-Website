@@ -5,6 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -1px;
   overflow: hidden;
+  font-family: 'Roboto', sans-serif;
 }
 
 code {
@@ -22,9 +23,11 @@ code {
   justify-content: space-between;
   z-index: 2;
 }
+
 .overflow {
   overflow: hidden;
 }
+
 .app-stars {
   top: 0;
   left: 0;
@@ -55,8 +58,25 @@ code {
   pointer-events: none;
   animation: opacitychange1 10s infinite, rotate1 30s infinite;
   animation-timing-function: linear;
-  transform: scaleY(2), scaleX(2);
 }
+
+.app-cold-nova {
+  background-color: initial;
+  top: -150%;
+  left: -150%;
+  width: 300vw;
+  height: 300vh;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.1;
+  background-image: url('https://thegraph.com/images/landing/haze/cold-1.svg');
+  background-size: 100% auto;
+  pointer-events: none;
+  animation: opacitychange2 10s infinite, rotate1 30s infinite;
+  animation-timing-function: linear;
+}
+
 
 @keyframes opacitychange1 {
   0% {opacity: 0.25;  transform: rotate(0deg);}
@@ -178,14 +198,12 @@ code {
   background-size: 40px 40px;
   border-radius: 50%;
   width: 40px;
-  height: 40px;
 }
 
 .subcontainer-image.selected {
   background-size: 40px 40px;
   border-radius: 50%;
   width: 40px;
-  height: 40px;
 }
 
 .container-option {
@@ -231,7 +249,7 @@ code {
 
 .item-container {
   width: 36vw;
-  height: 5vh;
+  height: 30vh;
   display: flex;
   text-align: left;
   flex-direction: column;
