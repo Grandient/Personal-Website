@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {FaGithub, FaLinkedin, FaStackOverflow, FaEnvelope, FaFilePdf, FaFileVideo} from 'react-icons/fa';
 import {IoIosBrowsers} from 'react-icons/io';
-import {GrDeploy} from  "react-icons/gr";
+import {VscRunAll} from  "react-icons/vsc";
 
 // Techonlogy
 import react from './app/React.png';
@@ -257,7 +257,7 @@ function ItemContainer(props: any){
       }
       {props.item.type === "Project" ?
           <a className="icon" aria-label="Tech Link" href={props.item.deployment} target="_blank" data-hint="Github" rel="noreferrer">
-          <GrDeploy size={40}/> Deployment
+          <VscRunAll size={40}/> Deployment
       </a>
       : null
       }
