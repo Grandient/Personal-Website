@@ -12,6 +12,7 @@ import redux from './app/Redux.svg';
 import postgres from './app/postgres.svg';
 import airflow from './app/airflow.png';
 import grpc from './app/grpc.png';
+import semanticui from './app/semanticui.png'
 
 // Experience 
 import ontariotech from './app/OntarioTech.png';
@@ -33,7 +34,7 @@ let projects = [
     link: "https://github.com/Grandient/PassChecker",
     type: "Project",
     video: "http://gavingosling.me/data/PassChecker.webm",
-    technologies: [{image:react, link: "https://reactjs.org/"}]
+    technologies: [{image:react, link: "https://reactjs.org/"}, {image: semanticui, link:"https://semantic-ui.com/"}]
   },
   { name: "RepositoryViewr", 
     path: repositoryviewr,
@@ -51,7 +52,7 @@ let projects = [
     link: "private",
     type: "Project",
     video: "none",
-    technologies: [{image: react, link: "https://reactjs.org/"}, {image: redux, link: "https://redux.js.org/"}]
+    technologies: [{image: react, link: "https://reactjs.org/"}, {image: redux, link: "https://redux.js.org/"},  {image:grpc, link:"https://grpc.io/"}]
   }
 ]
 
@@ -61,7 +62,7 @@ let experience = [
     description: "ESL is an esports organizer and production company that produces video game competitions worldwide. ESL is the world's largest esports company, and the oldest that is still operational.",
     link: "https://www.eslgaming.com/",
     type: "Experience",
-    technologies: [{image:react, link: "https://reactjs.org/"}, {image: redux, link: "https://redux.js.org/"}]
+    technologies: [{image:react, link: "https://reactjs.org/"}, {image: redux, link: "https://redux.js.org/"}, {image:grpc, link:"https://grpc.io/"}]
   },
   {name: "Ontario Tech University", 
    path: ontariotech,
@@ -127,7 +128,7 @@ let technology = [
    path: grpc,
    description: "gRPC is an open source remote procedure call system initially developed at Google in 2015.",
    link: "https://grpc.io/",
-   tech: "Tech"
+   type: "Tech"
   }
 ]
 
