@@ -146,14 +146,16 @@ let technology = [
 */
 
 function App() {
+  const [click, setClick] = useState(false)
+
   return (
     <div>
-      <div className='night app'>
-        <Header/>
-        <InformationModal/>
-        <MainContainer/>
+      <div className='night app' onClick={(e) => click ? setClick(!click) : null}>
+        <Header onClick={() => click ? setClick(!click) : null}/>
+        <InformationModal click={click} setClick={setClick}/>
+        <MainContainer onClick={() => click ? setClick(!click) : null}/>
         <div></div>
-        <Footer/>
+        <Footer onClick={() => click ? setClick(!click) : null}/>
       </div>
     </div>
   );
@@ -167,7 +169,7 @@ function Header(props:any){
   )
 }
 
-function Footer(){
+function Footer(props:any){
   return (
     <div className="footer">
         <nav className="icon-container">
@@ -191,7 +193,7 @@ function Footer(){
   )
 }
 
-function MainContainer(){
+function MainContainer(props:any){
   const [click, setClick] = useState("Projects")
 
   return (
@@ -230,9 +232,14 @@ function ContainerOption(props: any){
   )
 }
 
-function InformationModal(){
+function InformationModal(props: any){
   return (
-      <div className="info-modal">Information</div>
+      <div>
+        {!props.click ? 
+          <div onClick={() => props.setClick(!props.click)} className="info-modal-button">Information</div> : 
+          <div className="info-modal"><div className="modal-content">Information will be added here shortly.</div></div>
+        }
+      </div>
     )
 }
 
