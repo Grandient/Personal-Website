@@ -152,9 +152,11 @@ function App() {
         <div onClick={(e) => click ? setClick(!click) : null} className="info-modal">
           <div className="modal-content">
             <div className="modal-header">Information Modal</div>
-            <div className="modal-body">This is my personal website. Here I have listed the some of the technologies I've worked with. I have also included various
-                employment experiences and projects that I have created. In this modal I also plan on adding some tools I have found helpful as well extra goodies that will 
-                change how this site looks. I hope you enjoy! (You can click anywhere to close this.)
+            <div className="modal-body">This is my personal website. 
+              Here I have listed the some of the technologies I've worked with. I have also included various
+              employment experiences and projects that I have created. 
+              In this modal I will add some tools I have found helpful as well extra goodies that will change how this site looks. 
+              I hope you enjoy! (You can click anywhere to close this.)
             </div>
           </div>
         </div> : 
