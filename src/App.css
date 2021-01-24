@@ -343,137 +343,345 @@ code {
   color: rgba(209, 73, 157, 0.692)
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 320px) {
+
+  .header {
+    width: 60vw;
+  }
+
   .footer {
-    width: 90vw;
+    width: 60vw;
   }
 
   .main-container {
-    width: 90vw;
-    height: 70vh;
-  }
-
-  .container-option {
-    width: 20vw;
-    font-size: 4vw;
+    width: 96vw;
   }
 
   .main-options {
-    margin: 1vw;
+    margin-bottom: 1vh;
   }
 
   .sub-options {
-    margin: 1vw;
-    width: 82vw;
-    height: 20vh;
-    flex-wrap: wrap;
+    margin-bottom: 1vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+
+  .container-option {
+    font-size: calc(min(4vh,3vw));
+    width: 20vw;
   }
 
   .container-option.selected {
-    width: 30vw;
-    font-size: 5vw;
-  }
-
-  .subcontainer-option {
-    margin: 2vw;
+    width: 25vw;
+    font-size: calc(min(5vh,4vw));
   }
 
   .item-container {
-    margin-top: 2vw;
-    width: 82vw;
-    height: 40vh;
-    margin-left: 2.5vw;
+    height: 50vh;
+    width: 92vw;
+    margin-bottom: 2vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
   }
 
-  .flex-row {
-    font-size: 5vw;
-    overflow: none;
+  .subcontainer-image.selected {
+    background-size: 30px 30px;
+    border-radius: 50%;
+    width: 30px;
   }
 
-  .item-name {
-    font-size: 4vw;
+  .subcontainer-image {
+    background-size: 30px 30px;
+    border-radius: 50%;
+    width: 30px;
   }
 
-  .tech-name {
-    font-size: 4vw;
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .flex-row, .tech-name, .icon, .item-name {
+    font-size: 16px;
+  }
+
+  .tech-img {
+    background-size: 40px 40px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
   }
 
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 400px) {
+
+  .header {
+    width: 40vw;
+  }
 
   .footer {
-    width: 90vw;
+    width: 60vw;
   }
 
   .main-container {
-    width: 90vw;
-    height: 70vh;
+    width: 80vw;
   }
 
   .container-option {
-    width: 20vw;
-    font-size: 4vw;
-  }
-
-  .main-options {
-    margin: 1vw;
-  }
-
-  .sub-options {
-    margin: 1vw;
-    width: 82vw;
-    height: 20vh;
-    flex-wrap: wrap;
+    font-size: calc(min(3vh,2vw));
+    width: 10vw;
   }
 
   .container-option.selected {
-    width: 30vw;
-    font-size: 5vw;
-  }
-
-  .subcontainer-option {
-    margin: 2vw;
+    width: 15vw;
+    font-size: calc(min(4vh,3vw));
   }
 
   .item-container {
-    margin-top: 2vw;
-    width: 82vw;
     height: 40vh;
-    margin-left: 2.5vw;
+    width: 76vw;
   }
 
-  .flex-row {
-    font-size: 5vw;
-    overflow: none;
+  .subcontainer-image.selected {
+    background-size: 30px 30px;
+    border-radius: 50%;
+    width: 30px;
   }
 
-  .item-name {
-    font-size: 4vw;
+  .subcontainer-image {
+    background-size: 30px 30px;
+    border-radius: 50%;
+    width: 30px;
   }
 
-  .tech-name {
-    font-size: 4vw;
+  svg {
+    width: 30px;
+    height: 30px;
   }
 
+  .flex-row, .tech-name, .icon, .item-name {
+    font-size: 14px;
+  }
+
+  .tech-img {
+    background-size: 40px 40px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 500px) {
+
+  .header {
+    width: 40vw;
+  }
+
+  .main-container {
+    width: 80vw;
+  }
+
+  .container-option {
+    font-size: calc(min(2vh,2vw));
+    width: 10vw;
+  }
+
+  .container-option.selected {
+    width: 15vw;
+    font-size: calc(min(3vh,2vw));
+}
+
+  .item-container {
+    height: 40vh;
+    width: 76vw;
+  }
+
+  .footer {
+    width: 60vw;
+  }
+
+  .subcontainer-image.selected {
+    background-size: 30px 30px;
+    border-radius: 50%;
+    width: 30px;
+  }
+
+  .subcontainer-image {
+    background-size: 30px 30px;
+    border-radius: 50%;
+    width: 30px;
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .flex-row, .tech-name, .icon, .item-name {
+    font-size: 14px;
+  }
+
+  .tech-img {
+    background-size: 40px 40px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+ 
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+  .main-container {
+    width: 60vw;
+  }
+
+  .container-option {
+    font-size: calc(min(2vh,2vw));
+    width: 10vw;
+  }
+
+  .container-option.selected {
+    width: 15vw;
+    font-size: calc(min(3vh,2vw));
+}
+
+  .item-container {
+    height: 40vh;
+    width: 56vw;
+  }
+
+  .footer {
+    width: 40vw;
+  }
+
+  .subcontainer-image.selected {
+    background-size: 30px 30px;
+    border-radius: 50%;
+    width: 30px;
+  }
+
+  .subcontainer-image {
+    background-size: 30px 30px;
+    border-radius: 50%;
+    width: 30px;
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .flex-row, .tech-name, .icon, .item-name {
+    font-size: 14px;
+  }
+
+  .tech-img {
+    background-size: 40px 40px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
 
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 
+  .main-container {
+    width: 60vw;
+  }
 
+  .container-option {
+    font-size: calc(min(2vh,2vw));
+    width: 10vw;
+  }
+
+  .container-option.selected {
+    width: 15vw;
+    font-size: calc(min(3vh,2vw));
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+  .item-container {
+    height: 40vh;
+    width: 56vw;
+  }
 
+  .footer {
+    width: 40vw;
+  }
+
+  .subcontainer-image.selected {
+    background-size: 30px 30px;
+    border-radius: 50%;
+    width: 30px;
+  }
+
+  .subcontainer-image {
+    background-size: 30px 30px;
+    border-radius: 50%;
+    width: 30px;
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .flex-row, .tech-name, .icon, .item-name {
+    font-size: 14px;
+  }
+
+  .tech-img {
+    background-size: 40px 40px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
 
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1024px) {
+
+  .item-container {
+    height: 40vh;
+  }
+  .footer {
+    width: 40vw;
+  }
+
+  .subcontainer-image.selected {
+    background-size: 30px 30px;
+    border-radius: 50%;
+    width: 30px;
+  }
+
+  .subcontainer-image {
+    background-size: 30px 30px;
+    border-radius: 50%;
+    width: 30px;
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .flex-row, .tech-name, .icon, .item-name {
+    font-size: 14px;
+  }
+
+  .tech-img {
+    background-size: 40px 40px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
 
 }

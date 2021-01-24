@@ -132,9 +132,7 @@ let technology = [
   }
 ]
 
-function App() {
-  return (
-    <div>
+/*
       <div>
         <div className="overflow">
           <div className="app-stars"></div>
@@ -143,8 +141,16 @@ function App() {
           <div className="app-nova"></div>
         </div>
       </div>
+
+
+*/
+
+function App() {
+  return (
+    <div>
       <div className='night app'>
         <Header/>
+        <InformationModal/>
         <MainContainer/>
         <div></div>
         <Footer/>
@@ -222,6 +228,12 @@ function ContainerOption(props: any){
       </div>
    </div>
   )
+}
+
+function InformationModal(){
+  return (
+      <div></div>
+    )
 }
 
 function ItemContainer(props: any){
