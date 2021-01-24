@@ -462,15 +462,16 @@ code {
   }
 
   .subcontainer-image.selected {
-    background-size: 30px 30px;
+    background-size: 25px 25px;
     border-radius: 50%;
-    width: 30px;
+    width: 25px;
   }
 
   .subcontainer-image {
-    background-size: 30px 30px;
+    
+    background-size: 25px 25px;
     border-radius: 50%;
-    width: 30px;
+    width: 25px;
   }
 
   svg {
