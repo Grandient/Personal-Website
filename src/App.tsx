@@ -133,17 +133,7 @@ let technology = [
 ]
 
 /*
-     
-
-
-*/
-
-function App() {
-  const [click, setClick] = useState(false)
-
-  return (
-    <div>
-       <div>
+     <div>
         <div className="overflow">
           <div className="app-stars"></div>
         </div>
@@ -151,6 +141,13 @@ function App() {
           <div className="app-nova"></div>
         </div>
       </div>
+*/
+
+function App() {
+  const [click, setClick] = useState(false)
+
+  return (
+    <div>
       {click ? 
         <div onClick={(e) => click ? setClick(!click) : null} className="info-modal">
           <div className="modal-content">
