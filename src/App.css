@@ -441,6 +441,7 @@ code {
     margin-bottom: 1vh;
     margin-left: 1vw;
     margin-right: 1vw;
+    border: none;
   }
 
   .container-option {
@@ -522,6 +523,7 @@ code {
 
   .sub-options {
     margin-top: 1vh;
+    border: none;
   }
 
   .item-container {
