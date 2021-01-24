@@ -232,7 +232,7 @@ function ContainerOption(props: any){
 
 function InformationModal(){
   return (
-      <div></div>
+      <div className="info-modal">Information</div>
     )
 }
 
