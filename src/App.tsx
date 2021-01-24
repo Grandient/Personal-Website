@@ -150,12 +150,24 @@ function App() {
 
   return (
     <div>
-      <div className='night app' onClick={(e) => click ? setClick(!click) : null}>
-        <Header onClick={() => click ? setClick(!click) : null}/>
-        <InformationModal click={click} setClick={setClick}/>
-        <MainContainer onClick={() => click ? setClick(!click) : null}/>
+      {click ? 
+        <div onClick={(e) => click ? setClick(!click) : null} className="info-modal">
+          <div className="modal-content">
+            <div className="modal-header">Information Modal</div>
+            <div className="modal-body">This is my personal website. Here I have listed the some of the technologies I've worked with. I have also included various
+                employment experiences and projects that I have created. In this modal I also plan on adding some tools I have found helpful as well extra goodies that will 
+                change how this site looks. I hope you enjoy! (You can click anywhere to close this.)
+            </div>
+          </div>
+        </div> : 
         <div></div>
-        <Footer onClick={() => click ? setClick(!click) : null}/>
+      }
+      <div className='night app'>
+        <Header/>
+        <InformationModal click={click} setClick={setClick}/>
+        <MainContainer/>
+        <div></div>
+        <Footer/>
       </div>
     </div>
   );
@@ -235,10 +247,7 @@ function ContainerOption(props: any){
 function InformationModal(props: any){
   return (
       <div>
-        {!props.click ? 
-          <div onClick={() => props.setClick(!props.click)} className="info-modal-button">Information</div> : 
-          <div className="info-modal"><div className="modal-content">Information will be added here shortly.</div></div>
-        }
+          <div onClick={() => props.setClick(!props.click)} className="info-modal-button">Information</div> 
       </div>
     )
 }
