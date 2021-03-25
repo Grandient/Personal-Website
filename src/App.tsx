@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import {FaGithub, FaLinkedin, FaStackOverflow, FaEnvelope, FaFilePdf, FaFileVideo} from 'react-icons/fa';
 import {IoIosBrowsers} from 'react-icons/io';
 import {VscRunAll} from  "react-icons/vsc";
@@ -236,7 +235,7 @@ function ContainerOption(props: any){
       <div className="sub-options">
         {props.options.map((option: {name: string, path: string}) => {
           return <div onClick={() => setClick(option.name)} className={click === option.name ? "subcontainer-option selected" : "subcontainer-option"}>
-              <Image width={40} height={40} src={option.path} alt={option.name} className={click === option.name ? "subcontainer-image selected" : "subcontainer-image"}/>
+              <img width={40} height={40} src={option.path} alt={option.name} className={click === option.name ? "subcontainer-image selected" : "subcontainer-image"}/>
             </div>
         })}
       </div>
@@ -306,7 +305,7 @@ function ItemContainer(props: any){
           {props.item.technologies.map((tech:any) => {
             return <a aria-label="Tech Link" href={tech.link} target="_blank" data-hint="Github" rel="noreferrer">
               <div className="tech-img-div">
-                <Image objectFit='cover' width={40} height={40} alt={tech.image} src={tech.image} className="tech-img"/>
+                <img width={40} height={40} alt={tech.image} src={tech.image} className="tech-img"/>
               </div>
             </a>
           })}
