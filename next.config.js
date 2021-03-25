@@ -4,7 +4,7 @@ const optimizedImages = require('next-optimized-images');
 
 const nextConfig = {
     basePath: '/Personal-Website',
-    assetPrefix: '/Personal-Website'
+    assetPrefix: '/Personal-Website/'
 }
 
 module.exports = withPlugins([
