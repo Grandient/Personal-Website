@@ -1,30 +1,31 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import {FaGithub, FaLinkedin, FaStackOverflow, FaEnvelope, FaFilePdf, FaFileVideo} from 'react-icons/fa';
 import {IoIosBrowsers} from 'react-icons/io';
 import {VscRunAll} from  "react-icons/vsc";
 
 // Techonlogy
-import react from './app/React.png';
-import mongodb from './app/Mongodb.png';
-import prometheus from './app/Prometheus.png';
-import grafana from './app/Grafana.jpg';
-import redux from './app/Redux.svg';
-import postgres from './app/postgres.svg';
-import airflow from './app/airflow.png';
-import grpc from './app/grpc.png';
-import semanticui from './app/semanticui.png'
+let react = '/assets/React.png';
+let mongodb = '/assets/Mongodb.png';
+let prometheus ='/assets/Prometheus.png';
+let grafana ='/assets/Grafana.jpg';
+let redux = '/assets/Redux.svg';
+let postgres = '/assets/postgres.svg';
+let airflow = '/assets/airflow.png';
+let grpc = '/assets/grpc.png';
+let semanticui = '/assets/semanticui.png'
 
 // Experience 
-import ontariotech from './app/OntarioTech.png';
-import ESL from './app/ESL.jpg';
-import flitex from './app/Flitex.png';
+let ontariotech = '/assets/OntarioTech.png';
+let ESL = '/assets/ESL.jpg';
+let flitex = '/assets/Flitex.png';
 
 // Projects
-import passchecker from './app/Passcheckerlogo.png'
-import repositoryviewr from './app/repositoryviewrlogo.png'
-import badlion from './app/badlion-logo.png'
+let passchecker = '/assets/Passcheckerlogo.png'
+let repositoryviewr = '/assets/repositoryviewrlogo.png'
+let badlion = '/assets/badlion-logo.png'
 
-import './App.css';
+
 
 let projects = [
   { name: "PassChecker", 
@@ -55,6 +56,8 @@ let projects = [
     technologies: [{image: react, link: "https://reactjs.org/"}, {image: redux, link: "https://redux.js.org/"},  {image:grpc, link:"https://grpc.io/"}]
   }
 ]
+
+
 
 let experience = [
   { name: "ESL", 
@@ -232,7 +235,9 @@ function ContainerOption(props: any){
     <div>
       <div className="sub-options">
         {props.options.map((option: {name: string, path: string}) => {
-          return <div onClick={() => setClick(option.name)} className={click === option.name ? "subcontainer-option selected" : "subcontainer-option"}><img src={option.path} alt={option.name} className={click === option.name ? "subcontainer-image selected" : "subcontainer-image"}/></div>
+          return <div onClick={() => setClick(option.name)} className={click === option.name ? "subcontainer-option selected" : "subcontainer-option"}>
+              <Image width={40} height={40} src={option.path} alt={option.name} className={click === option.name ? "subcontainer-image selected" : "subcontainer-image"}/>
+            </div>
         })}
       </div>
       <div className="item-container">
@@ -300,7 +305,9 @@ function ItemContainer(props: any){
           <div className="tech-row">
           {props.item.technologies.map((tech:any) => {
             return <a aria-label="Tech Link" href={tech.link} target="_blank" data-hint="Github" rel="noreferrer">
-              <img alt={tech.image} src={tech.image} className="tech-img"/>
+              <div className="tech-img-div">
+                <Image objectFit='cover' width={40} height={40} alt={tech.image} src={tech.image} className="tech-img"/>
+              </div>
             </a>
           })}
           </div>

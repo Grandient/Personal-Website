@@ -200,12 +200,14 @@ code {
   background-size: 40px 40px;
   border-radius: 50%;
   width: 40px;
+  object-fit: contain;
 }
 
 .subcontainer-image.selected {
   background-size: 40px 40px;
   border-radius: 50%;
   width: 40px;
+  object-fit: contain;
 }
 
 .container-option {
@@ -284,14 +286,15 @@ code {
   margin-top: 2vh; 
 }
 
-.tech-img {
-  object-fit: cover;
-  background-size: 60px 60px;
-  border-radius: 50%;
-  width: 60px;
-  height: 50px;
+.tech-img-div {
+  width: 40px;
+  height: 40px;
   margin-right: 1vw;
   margin-top: 0.5vh;
+}
+
+.tech-img {
+  border-radius: 50%;
 }
 
 .tech-row {
