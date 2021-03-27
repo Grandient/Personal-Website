@@ -295,6 +295,7 @@ code {
 
 .tech-img {
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .tech-row {
