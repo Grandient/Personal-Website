@@ -168,7 +168,6 @@ code {
   height: 5vh;
   display: flex;
   flex-direction: column;
-  color: #ff89d1;
   align-items: center;
   justify-content: center;
   font-size: calc(min(3vh,2vw));
@@ -219,6 +218,7 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: #ff89d1;
   font-size: calc(min(2vh,1vw));
   border: 4px solid rgb(209, 73, 157);
   background-color:rgba(44, 42, 42, 0.329);
