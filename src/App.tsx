@@ -149,11 +149,11 @@ function App() {
   const [click, setClick] = useState(false)
 
   return (
-    <div>
+    <>
       {click ? 
         <div onClick={(e) => click ? setClick(!click) : null} className="info-modal">
           <div className="modal-content">
-            <div className="modal-header">Information Modal</div>
+            <h3 className="modal-header">Information Modal</h3>
             <div className="modal-body">This is my personal website. 
               Here I have listed the some of the technologies I've worked with. I have also included various
               employment experiences and projects that I have created. 
@@ -164,21 +164,21 @@ function App() {
         </div> : 
         <div></div>
       }
-      <div className='night app'>
+      <main className='night app'>
         <Header/>
         <InformationModal click={click} setClick={setClick}/>
         <MainContainer/>
         <div></div>
         <Footer/>
-      </div>
-    </div>
+      </main>
+    </>
   );
 }
 
 function Header(props:any){
   return (
     <header className="header">
-      <div className="item-name">Gavin Gosling</div>
+      <h1 className="item-name">Gavin Gosling</h1>
     </header>
   )
 }
@@ -212,11 +212,11 @@ function MainContainer(props:any){
 
   return (
     <div className="main-container"> 
-      <div className="main-options">
-        <div onClick={() => setClick("Projects")} className={click === "Projects" ? "container-option selected" : "container-option"}>Projects</div>
-        <div onClick={() => setClick("Experience")} className={click === "Experience" ? "container-option selected" : "container-option"}>Experience</div>
-        <div onClick={() =>  setClick("Technology")} className={click === "Technology" ? "container-option selected" : "container-option"}>Technology</div>
-      </div>
+      <nav className="main-options">
+        <h2 onClick={() => setClick("Projects")} className={click === "Projects" ? "container-option selected" : "container-option"}>Projects</h2>
+        <h2 onClick={() => setClick("Experience")} className={click === "Experience" ? "container-option selected" : "container-option"}>Experience</h2>
+        <h2 onClick={() =>  setClick("Technology")} className={click === "Technology" ? "container-option selected" : "container-option"}>Technology</h2>
+      </nav>
       <div className="sub-container">
         {click === "Projects" ? <ContainerOption options={projects}/> : null}
         {click === "Experience" ? <ContainerOption options={experience}/> : null}
@@ -232,13 +232,13 @@ function ContainerOption(props: any){
 
   return (
     <div>
-      <div className="sub-options">
+      <nav className="sub-options">
         {props.options.map((option: {name: string, path: string}) => {
           return <div onClick={() => setClick(option.name)} className={click === option.name ? "subcontainer-option selected" : "subcontainer-option"}>
               <img src={prefix + option.path} alt={option.name} className={click === option.name ? "subcontainer-image selected" : "subcontainer-image"}/>
             </div>
         })}
-      </div>
+      </nav>
       <div className="item-container">
         {props.options.map((option: {name: string, path: string}) => {
           return <div>{click === option.name ? <ItemContainer item={option}/> : null}</div>
@@ -251,7 +251,7 @@ function ContainerOption(props: any){
 function InformationModal(props: any){
   return (
       <div>
-          <div onClick={() => props.setClick(!props.click)} className="info-modal-button">Information</div> 
+          <h2 onClick={() => props.setClick(!props.click)} className="info-modal-button">Information</h2> 
       </div>
     )
 }
@@ -260,15 +260,15 @@ function ItemContainer(props: any){
   return (
   <div>
     <div className="flex-row">
-      <div className="item-name">Title: </div>
+      <h3 className="item-name">Title: </h3>
       <div>{props.item.name}</div>
     </div>
     <div className="flex-row">
-      <div className="item-name">Description: </div>
+      <h3 className="item-name">Description: </h3>
       <div>{props.item.description}</div>
     </div>
     <div>
-      <div className="item-name">Material: </div>
+      <h3 className="item-name">Material: </h3>
       {props.item.type === "Project" && props.item.link && props.item.link != "private" ?
           <a className="icon" aria-label="Github" href={props.item.link} target="_blank" data-hint="Github" rel="noreferrer">
           <FaGithub size={40}/> Github
@@ -299,9 +299,9 @@ function ItemContainer(props: any){
       </a>
       : null
       }
-        {(props.item.type === "Project" || props.item.type === "Experience") ? <div className="tech-name">Technologies: </div> : null}
+        {(props.item.type === "Project" || props.item.type === "Experience") ? <h3 className="tech-name">Technologies: </h3> : null}
         {(props.item.type === "Project" || props.item.type === "Experience") && (props.item.technologies != []) ?
-          <div className="tech-row">
+          <nav className="tech-row">
           {props.item.technologies.map((tech:any) => {
             return <a aria-label="Tech Link" href={tech.link} target="_blank" data-hint="Github" rel="noreferrer">
               <div className="tech-img-div">
@@ -309,7 +309,7 @@ function ItemContainer(props: any){
               </div>
             </a>
           })}
-          </div>
+          </nav>
         : null
         }
     </div>
