@@ -6,7 +6,9 @@ import Head from 'next/head'
 export default function MyApp({ Component, pageProps }) {
   return <>
     <Head>
-        <meta name="viewport" content="viewport-fit=cover" />
+        <link rel='shortcut icon' href='/Personal-Website/favicon.ico'/>
+        <link rel="manifest" href="/Personal-Website/manifest.json" />
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
         <title>Gavin Gosling</title>
     </Head>
     <Component {...pageProps} />

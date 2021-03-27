@@ -168,6 +168,7 @@ code {
   height: 5vh;
   display: flex;
   flex-direction: column;
+  color: #ff89d1;
   align-items: center;
   justify-content: center;
   font-size: calc(min(3vh,2vw));

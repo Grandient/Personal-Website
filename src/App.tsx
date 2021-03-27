@@ -177,9 +177,9 @@ function App() {
 
 function Header(props:any){
   return (
-    <div className="header">
+    <header className="header">
       <div className="item-name">Gavin Gosling</div>
-    </div>
+    </header>
   )
 }
 
