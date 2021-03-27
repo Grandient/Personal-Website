@@ -3,8 +3,8 @@ const withPlugins = require('next-compose-plugins');
 const optimizedImages = require('next-optimized-images');
 
 const nextConfig = {
-    basePath: '/',
-    assetPrefix: '/'
+    basePath: '',
+    assetPrefix: ''
 }
 
 module.exports = withPlugins([
