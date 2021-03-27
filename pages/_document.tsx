@@ -17,14 +17,8 @@ class MyDocument extends Document {
         content="Gavin Gosling's space and portfolio" 
         />
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
-        <script defer type="text/javascript">
-          var giftofspeed = document.createElement('link');
-          giftofspeed.rel = 'stylesheet';
-          giftofspeed.href = "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
-          giftofspeed.type = 'text/css';
-          var godefer = document.getElementsByTagName('link')[0];
-          godefer.parentNode.insertBefore(giftofspeed, godefer);
-        </script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+            rel="stylesheet"/>
         </Head>
         <body>
           <Main />
