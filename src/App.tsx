@@ -24,8 +24,6 @@ let passchecker = '/assets/Passcheckerlogo.png'
 let repositoryviewr = '/assets/repositoryviewrlogo.png'
 let badlion = '/assets/badlion-logo.png'
 
-const prefix = '/Personal-Website'
-
 let projects = [
   { name: "PassChecker", 
     path: passchecker, 
@@ -235,7 +233,7 @@ function ContainerOption(props: any){
       <nav className="sub-options">
         {props.options.map((option: {name: string, path: string}) => {
           return <div onClick={() => setClick(option.name)} className={click === option.name ? "subcontainer-option selected" : "subcontainer-option"}>
-              <img src={prefix + option.path} alt={option.name} className={click === option.name ? "subcontainer-image selected" : "subcontainer-image"}/>
+              <img src={option.path} alt={option.name} className={click === option.name ? "subcontainer-image selected" : "subcontainer-image"}/>
             </div>
         })}
       </nav>
@@ -305,7 +303,7 @@ function ItemContainer(props: any){
           {props.item.technologies.map((tech:any) => {
             return <a aria-label="Tech Link" href={tech.link} target="_blank" data-hint="Github" rel="noreferrer">
               <div className="tech-img-div">
-                <img alt={tech.image} src={prefix + tech.image} className="tech-img"/>
+                <img alt={tech.image} src={tech.image} className="tech-img"/>
               </div>
             </a>
           })}
